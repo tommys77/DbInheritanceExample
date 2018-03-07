@@ -32,7 +32,8 @@ namespace DataService.Controllers
         [Route("api/getsoftware")]
         public IQueryable<Item> GetAllSoftware()
         {
-            return db.Items;
+            var items = db.Items.Include("Owner");
+            return items;
         }
 
     }
