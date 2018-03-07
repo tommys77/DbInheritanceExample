@@ -43,7 +43,10 @@ namespace DataAccess
                 Review = review
             };
 
+            var hardware = new Hardware { ItemName = "Amiga 500", ProductionCompany = "Commodore", YearOfOrigin = 1987 };
+
             db.Items.Add(software);
+            db.Items.Add(hardware);
             db.SaveChanges();
 
         }

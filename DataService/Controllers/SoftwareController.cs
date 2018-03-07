@@ -30,10 +30,10 @@ namespace DataService.Controllers
 
         [HttpGet]
         [Route("api/getsoftware")]
-        public IQueryable<Item> GetAllSoftware()
+        public IQueryable<Software> GetAllSoftware()
         {
-            var items = db.Items.Include("Owner");
-            return items;
+            var software = db.Software.Include("Owner").Include("Category").Include("Review");
+            return software;
         }
 
     }
